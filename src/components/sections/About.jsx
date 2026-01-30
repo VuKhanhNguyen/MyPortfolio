@@ -24,7 +24,16 @@ const About = () => {
             }}
           >
             {/* Placeholder for Profile Image if user wants later */}
-            <span style={{ fontSize: "4rem" }}>👨‍💻</span>
+            <img
+              src="/avatar.png"
+              alt="Profile"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "var(--border-radius-md)",
+              }}
+            />
           </div>
         </NeonCard>
 
