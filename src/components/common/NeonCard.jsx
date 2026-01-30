@@ -5,10 +5,11 @@ import styled from "styled-components"; // Wait, I didn't install styled-compone
 // I'll create NeonCard.css next to it.
 import "./NeonCard.css";
 
-const NeonCard = ({ children, className = "", delay = 0 }) => {
+const NeonCard = ({ children, className = "", delay = 0, style = {} }) => {
   return (
     <motion.div
       className={`neon-card ${className}`}
+      style={style}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

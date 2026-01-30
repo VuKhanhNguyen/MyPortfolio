@@ -13,6 +13,8 @@ import {
   SiDocker,
   SiFigma,
   SiVite,
+  SiGithub,
+  SiGit,
 } from "react-icons/si";
 
 const sliderItems = [
@@ -27,6 +29,8 @@ const sliderItems = [
   { name: "MySQL", category: "Database", icon: <SiMysql /> },
   { name: "Docker", category: "Containerization", icon: <SiDocker /> },
   { name: "Figma", category: "UI Design", icon: <SiFigma /> },
+  { name: "Github", category: "Version Control", icon: <SiGithub /> },
+  { name: "Git", category: "Version Control", icon: <SiGit /> },
   { name: "Vite", category: "Build Tool", icon: <SiVite /> },
 ];
 
@@ -53,7 +57,7 @@ const Skills = () => {
 
         {/* Row 2: Right direction */}
         <InfiniteSlider
-          items={sliderItems.slice(5, 9)}
+          items={sliderItems.slice(5, 13)}
           speed={30}
           direction="right"
         />
