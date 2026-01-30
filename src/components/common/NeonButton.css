@@ -1,0 +1,53 @@
+.neon-btn {
+  position: relative;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  z-index: 1;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.neon-btn-secondary {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.neon-btn:hover {
+  color: #000;
+  box-shadow: var(--glow-primary);
+  border-color: transparent;
+}
+
+.neon-btn-secondary:hover {
+  box-shadow: var(--glow-secondary);
+  color: #fff;
+}
+
+.neon-btn-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--primary-color);
+  z-index: -1;
+  transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.neon-btn-secondary .neon-btn-bg {
+  background: var(--secondary-color);
+}
+
+.neon-btn:hover .neon-btn-bg {
+  width: 100%;
+}
