@@ -92,45 +92,16 @@ const Hero = () => {
   };
 
   return (
-    <section
-      id="hero"
-      style={{
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
+    <section id="hero" className="hero-section">
       {/* Background Glow */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "600px",
-          height: "600px",
-          background:
-            "radial-gradient(circle, rgba(0, 243, 255, 0.1) 0%, transparent 70%)",
-          filter: "blur(50px)",
-          zIndex: -1,
-        }}
-      ></div>
+      <div className="hero-bg-glow"></div>
 
       <div className="container" style={{ textAlign: "center", zIndex: 1 }}>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          style={{
-            color: "var(--primary-color)",
-            fontSize: "1.2rem",
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
-            marginBottom: "1rem",
-          }}
+          className="hero-subtitle"
         >
           Frontend Developer
         </motion.p>
@@ -139,12 +110,7 @@ const Hero = () => {
           variants={sentence}
           initial="hidden"
           animate={titleControls}
-          style={{
-            fontSize: "clamp(3rem, 8vw, 6rem)",
-
-            lineHeight: 1.1,
-            minHeight: "3.2em", // Reserve space to prevent layout jump
-          }}
+          className="hero-title"
         >
           {titleLine1.map((char, index) => (
             <motion.span key={`line1-${index}`} variants={letter}>
@@ -165,13 +131,7 @@ const Hero = () => {
           variants={subtitleSentence}
           initial="hidden"
           animate={subtitleControls}
-          style={{
-            maxWidth: "600px",
-            margin: "0 auto 3rem",
-            fontSize: "1.1rem",
-            color: "var(--text-muted)",
-            minHeight: "4.5em", // Reserve space
-          }}
+          className="hero-desc"
         >
           {subtitleText.map((char, index) => (
             <motion.span key={index} variants={letter}>
@@ -187,7 +147,7 @@ const Hero = () => {
           }}
           initial="hidden"
           animate={buttonControls}
-          style={{ display: "flex", gap: "1.5rem", justifyContent: "center" }}
+          className="hero-buttons"
         >
           <NeonButton
             onClick={() =>
@@ -215,14 +175,7 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-        style={{
-          position: "absolute",
-          bottom: "2rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          color: "var(--text-muted)",
-          fontSize: "2rem",
-        }}
+        className="scroll-indicator"
       >
         ↓
       </motion.div>

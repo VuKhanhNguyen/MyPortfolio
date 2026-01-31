@@ -13,13 +13,7 @@ import { motion } from "framer-motion";
 const Contact = () => {
   return (
     <Section id="contact" title="Get In Touch" subtitle="Contact">
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(300px, 1fr) 2fr",
-          gap: "4rem",
-        }}
-      >
+      <div className="contact-grid">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -35,17 +29,11 @@ const Contact = () => {
             </p>
           </div>
 
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
-          >
-            <div style={{ display: "flex", items: "center", gap: "1rem" }}>
+          <div className="contact-info">
+            <div className="contact-item">
               <div
-                style={{
-                  padding: "0.8rem",
-                  background: "rgba(255,255,255,0.05)",
-                  borderRadius: "50%",
-                  color: "var(--primary-color)",
-                }}
+                className="contact-icon-wrapper"
+                style={{ color: "var(--primary-color)" }}
               >
                 <Mail size={50} />
               </div>
@@ -57,14 +45,10 @@ const Contact = () => {
               </div>
             </div>
 
-            <div style={{ display: "flex", items: "center", gap: "1rem" }}>
+            <div className="contact-item">
               <div
-                style={{
-                  padding: "0.8rem",
-                  background: "rgba(255,255,255,0.05)",
-                  borderRadius: "50%",
-                  color: "var(--secondary-color)",
-                }}
+                className="contact-icon-wrapper"
+                style={{ color: "var(--secondary-color)" }}
               >
                 <MapPin size={50} />
               </div>
@@ -77,118 +61,52 @@ const Contact = () => {
             </div>
           </div>
 
-          <div style={{ marginTop: "2rem", display: "flex", gap: "1rem" }}>
+          <div className="contact-socials">
             {[Github, Linkedin, Facebook].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                style={{
-                  padding: "0.8rem",
-                  border: "1px solid var(--glass-border)",
-                  borderRadius: "50%",
-                  transition: "all 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "var(--primary-color)";
-                  e.currentTarget.style.boxShadow = "var(--glow-primary)";
-                  e.currentTarget.style.color = "var(--primary-color)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "var(--glass-border)";
-                  e.currentTarget.style.boxShadow = "none";
-                  e.currentTarget.style.color = "inherit";
-                }}
-              >
+              <a key={i} href="#" className="contact-social-link">
                 <Icon size={25} />
               </a>
             ))}
           </div>
         </motion.div>
 
-        <div
-          style={{
-            background: "var(--card-bg)",
-            padding: "2rem",
-            borderRadius: "var(--border-radius-lg)",
-            border: "1px solid var(--glass-border)",
-          }}
-        >
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
-          >
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "1.5rem",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.5rem",
-                }}
-              >
-                <label
-                  style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}
-                >
-                  Name
-                </label>
-                <input type="text" placeholder="John Doe" style={inputStyle} />
+        <div className="contact-form-wrapper">
+          <form onSubmit={(e) => e.preventDefault()} className="contact-form">
+            <div className="contact-form-row">
+              <div className="input-group">
+                <label className="input-label">Name</label>
+                <input
+                  type="text"
+                  placeholder="John Doe"
+                  className="input-field"
+                />
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.5rem",
-                }}
-              >
-                <label
-                  style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}
-                >
-                  Email
-                </label>
+              <div className="input-group">
+                <label className="input-label">Email</label>
                 <input
                   type="email"
                   placeholder="john@example.com"
-                  style={inputStyle}
+                  className="input-field"
                 />
               </div>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.5rem",
-              }}
-            >
-              <label style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>
-                Subject
-              </label>
+            <div className="input-group">
+              <label className="input-label">Subject</label>
               <input
                 type="text"
                 placeholder="Project Inquiry"
-                style={inputStyle}
+                className="input-field"
               />
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.5rem",
-              }}
-            >
-              <label style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>
-                Message
-              </label>
+            <div className="input-group">
+              <label className="input-label">Message</label>
               <textarea
                 rows="5"
                 placeholder="Tell me about your project..."
-                style={{ ...inputStyle, resize: "vertical" }}
+                className="input-field"
+                style={{ resize: "vertical" }}
               ></textarea>
             </div>
 
@@ -200,18 +118,6 @@ const Contact = () => {
       </div>
     </Section>
   );
-};
-
-const inputStyle = {
-  background: "rgba(0,0,0,0.3)",
-  border: "1px solid var(--glass-border)",
-  padding: "1rem",
-  borderRadius: "var(--border-radius-sm)",
-  color: "#fff",
-  fontFamily: "inherit",
-  fontSize: "1rem",
-  outline: "none",
-  transition: "border-color 0.3s ease, box-shadow 0.3s ease",
 };
 
 export default Contact;

@@ -4,41 +4,16 @@ import NeonCard from "../common/NeonCard";
 const About = () => {
   return (
     <Section id="about" title="About Me" subtitle="Who I Am">
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(300px, 1fr) 2fr",
-          gap: "2rem",
-          alignItems: "center",
-        }}
-      >
+      <div className="about-grid">
         <NeonCard>
-          <div
-            style={{
-              aspectRatio: "1/1",
-              background: "#222",
-              borderRadius: "var(--border-radius-md)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <div className="about-image-wrapper">
             {/* Placeholder for Profile Image if user wants later */}
-            <img
-              src="/avatar.png"
-              alt="Profile"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                borderRadius: "var(--border-radius-md)",
-              }}
-            />
+            <img src="/avatar.png" alt="Profile" className="about-image" />
           </div>
         </NeonCard>
 
         <div>
-          <p style={{ fontSize: "1.2rem", marginBottom: "1.5rem" }}>
+          <p className="about-text">
             I am a passionate{" "}
             <span className="text-gradient" style={{ fontWeight: 700 }}>
               Frontend Developer
@@ -53,40 +28,24 @@ const About = () => {
             code and human emotion.
           </p>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-              gap: "1rem",
-            }}
-          >
-            <div
-              style={{
-                padding: "1rem",
-                background: "rgba(255,255,255,0.05)",
-                borderRadius: "8px",
-                textAlign: "center",
-              }}
-            >
-              <h3 style={{ fontSize: "2rem", color: "var(--primary-color)" }}>
+          <div className="about-stats-grid">
+            <div className="stat-card">
+              <h3
+                className="stat-number"
+                style={{ color: "var(--primary-color)" }}
+              >
                 3+
               </h3>
-              <p style={{ fontSize: "0.9rem", margin: 0 }}>Years Experience</p>
+              <p className="stat-label">Years Experience</p>
             </div>
-            <div
-              style={{
-                padding: "1rem",
-                background: "rgba(255,255,255,0.05)",
-                borderRadius: "8px",
-                textAlign: "center",
-              }}
-            >
-              <h3 style={{ fontSize: "2rem", color: "var(--secondary-color)" }}>
+            <div className="stat-card">
+              <h3
+                className="stat-number"
+                style={{ color: "var(--secondary-color)" }}
+              >
                 10+
               </h3>
-              <p style={{ fontSize: "0.9rem", margin: 0 }}>
-                Projects Completed
-              </p>
+              <p className="stat-label">Projects Completed</p>
             </div>
           </div>
         </div>

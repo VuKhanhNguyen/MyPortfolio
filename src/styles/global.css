@@ -1,5 +1,8 @@
 @import "./variables.css";
 @import "./utilities.css";
+@import "./layout.css";
+@import "./sections.css";
+@import "./responsive.css";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&family=Fira+Code:wght@400&display=swap");
 
 * {

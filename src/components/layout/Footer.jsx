@@ -1,15 +1,8 @@
 const Footer = () => {
   return (
-    <footer
-      style={{
-        padding: "2rem 0",
-        textAlign: "center",
-        borderTop: "1px solid var(--glass-border)",
-        background: "rgba(5, 5, 5, 0.8)",
-      }}
-    >
+    <footer className="footer">
       <div className="container">
-        <p style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>
+        <p className="footer-text">
           &copy; {new Date().getFullYear()} Frontend Developer Portfolio. Built
           with ReactJS.
         </p>
