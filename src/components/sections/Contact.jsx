@@ -62,11 +62,30 @@ const Contact = () => {
           </div>
 
           <div className="contact-socials">
-            {[Github, Linkedin, Facebook].map((Icon, i) => (
-              <a key={i} href="#" className="contact-social-link">
-                <Icon size={25} />
-              </a>
-            ))}
+            <a
+              href="https://github.com/VuKhanhNguyen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-social-link"
+            >
+              <Github size={25} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/vu-khanh-nguyen-06a8632a6/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-social-link"
+            >
+              <Linkedin size={25} />
+            </a>
+            <a
+              href="https://www.facebook.com/vukhanh.nguyen.9461/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-social-link"
+            >
+              <Facebook size={25} />
+            </a>
           </div>
         </motion.div>
 

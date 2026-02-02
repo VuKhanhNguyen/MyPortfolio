@@ -18,7 +18,7 @@ const projects = [
     description:
       "A personal portfolio website showcasing my skills, projects, experience, and contact information. Built with React and enhanced with Framer Motion for fluid animations, page transitions, and interactive elements, delivering a modern and engaging user experience that highlights my front-end development style and design sense.",
     tags: ["React", "Framer Motion"],
-    link: "#",
+    link: "https://my-portfolio-phi-beige-34.vercel.app/",
     github: "https://github.com/VuKhanhNguyen/MyPortfolio.git",
   },
   {
